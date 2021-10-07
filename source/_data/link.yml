@@ -22,7 +22,16 @@ class:
       time: 2s
       # 鼠标悬停旋转角度
       rotate: 360deg
-    
+    3:
+      name: 唐先森の博客
+      link: https://ethant.top/
+      avatar: https://7.dusays.com/2021/05/14/0dd5fae94061a.png"
+      descr: 古今之成大事者，不惟有超世之才，亦必有坚忍不拔之志。
+      color: "#D2691E"
+      custom: link_custom #动画样式
+      time: 2s
+      # 鼠标悬停旋转角度
+      rotate: 360deg
 
 # class4:
 #   class_name: 友链样式（可选）

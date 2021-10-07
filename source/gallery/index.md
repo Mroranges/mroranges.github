@@ -5,10 +5,7 @@ description:
 top_img:
 ---
 
-{% gallery %}
-    ![](https://cdn.jsdelivr.net/gh/HCLonely/hclonely.github.io/img/Butterfly/013.webp)
-    ![](https://cdn.jsdelivr.net/gh/HCLonely/hclonely.github.io/img/Butterfly/023.webp)
-    ![](https://cdn.jsdelivr.net/gh/HCLonely/hclonely.github.io/img/Butterfly/033.webp)
-    ![](https://cdn.jsdelivr.net/gh/HCLonely/hclonely.github.io/img/Butterfly/003.webp)
-    
-{% endgallery %}
+<div class="gallery-group-main">
+{% galleryGroup ACG '二次元图片' '/gallery/ACG' https://cdn.jsdelivr.net/gh/tzy13755126023/BLOG_SOURCE/gallery_f/ACG/20210108_17.jpg %}
+</div>
+

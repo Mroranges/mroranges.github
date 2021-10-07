@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 随缘先生
-subtitle: '随缘先生的个人博客'
+title: 随缘先森
+subtitle: '随缘先森的个人博客'
 description: '胆小怕事，坏人勿近！'
 keywords: [学习, 生活, 常用软件, java, blog, 其他]  #网站的关键词
-author: 随缘先生
+author: 随缘先森
 language: zh-CN
 timezone: 'Asia/Shanghai'
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: https://mroranges.github.io
 root: /
 permalink: posts/:abbrlink/
 permalink_defaults:
@@ -136,13 +136,15 @@ douban:
   user: 142585174
   builtin: false
   book:
-    title: '好书推荐'
-    quote: '读书好，好读书，读好书'
+    title: '灵魂交流'
+    quote: '书是人类进步的阶梯，所以我停滞不前'
   movie:
     title: '电影'
-    quote: '那些在电影院看过的电影'
+    quote: '记忆深刻的电影'
+  #game:
+  #  title: 'This is my game title'
+  #  quote: 'This is my game quote'
   timeout: 10000
-
 
   # 添加steam
 steam:

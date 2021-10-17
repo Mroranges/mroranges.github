@@ -16,6 +16,7 @@
     "hexo-bilibili-bangumi": "^1.6.1",
     "hexo-butterfly-douban": "^1.2.4",
     "hexo-butterfly-tag-plugins-plus": "^1.0.3",
+    "hexo-deployer-git": "^3.0.0",
     "hexo-generator-archive": "^1.0.0",
     "hexo-generator-category": "^1.0.0",
     "hexo-generator-index": "^2.0.0",

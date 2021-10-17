@@ -4,6 +4,7 @@ date: 2021-10-01 16:01:08
 description: 只显示description
 tags:
   - hexo
+  - butterfly
 categories:
   - hexo
 toc: true
@@ -323,7 +324,35 @@ npm install hexo-butterfly-douban --save
 <!-- endtab -->
 {% endtabs %}
 
+## hexo 部署
+{% tabs 'hexo 部署' %}
+<!-- tab 插件安装 -->
+```bash
+$npm install hexo-deployer-git --save
+```
+<!-- endtab -->
+<!-- tab 使用 -->
+{% note info simple%}
+如果安装了hexo-butterfly-douban插件，hexo d 默认执行的是 hexo douban
+{% endnote %}
+```bash
+hexo deploy
+```
+<!-- endtab -->
+{% endtabs %}
 
+
+## hexo butterfly 首页文章排序
+在根目录_config.yml中配置如下参数
+```markdown
+index_generator:
+  path: ''
+  per_page: 10
+  order_by: -date # -date 最新时间的文章在最上
+```
+
+需要按照更新时间排序可以参考以下文章
+{% link hexo笔记：文章排序,https://gsy00517.github.io/hexo20200207151318/, /%}
 
 ## hexo使用过程中遇到的问题
 

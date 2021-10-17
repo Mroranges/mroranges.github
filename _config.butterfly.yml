@@ -248,7 +248,7 @@ index_post_content:
 toc:
   enable: true # 是否显示TOC
   number: true # 是否显示章节数
-  style_simple: true # 简洁模式（侧边栏只显示TOC）
+  style_simple: false # 简洁模式（侧边栏只显示TOC）
 
 post_copyright:
   enable: true

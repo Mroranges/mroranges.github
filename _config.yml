@@ -4,7 +4,7 @@
 
 # Site
 title: 随缘先森
-subtitle: '随缘先森的个人博客'
+subtitle: '随缘先森的随记'
 description: '胆小怕事，坏人勿近！'
 keywords: [学习, 生活, 常用软件, java, blog, 其他]  #网站的关键词
 author: 随缘先森
@@ -64,7 +64,7 @@ highlight:
 index_generator:
   path: ''
   per_page: 10
-  order_by: -date
+  order_by: date
 
 # Category & Tag
 default_category: uncategorized

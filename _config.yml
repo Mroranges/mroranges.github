@@ -4,7 +4,7 @@
 
 # Site
 title: 随缘先森
-subtitle: '随缘先森的随记'
+subtitle: '愚蠢的碳基生物'
 description: '胆小怕事，坏人勿近！'
 keywords: [学习, 生活, 常用软件, java, blog, 其他]  #网站的关键词
 author: 随缘先森
@@ -12,10 +12,9 @@ language: zh-CN
 timezone: 'Asia/Shanghai'
 
 # URL
-## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://mroranges.github.io
-root: /
-permalink: posts/:abbrlink/
+## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
+url: http://mroranges.github.io
+permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
@@ -35,7 +34,6 @@ skip_render:
   - 'box/*'
   - 'box/**'
 
-  
 # Writing
 new_post_name: :title.md # File name of new posts
 default_layout: post
@@ -56,6 +54,11 @@ highlight:
   tab_replace: ''
   wrap: true
   hljs: false
+prismjs:
+  enable: false
+  preprocess: true
+  line_number: true
+  tab_replace: ''
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
@@ -81,8 +84,8 @@ meta_generator: true
 ## http://momentjs.com/docs/#/displaying/format/
 date_format: YYYY-MM-DD
 time_format: HH:mm:ss
-## Use post's date for updated date unless set in front-matter
-use_date_for_updated: false
+## updated_option supports 'mtime', 'date', 'empty'
+updated_option: 'mtime'
 
 # Pagination
 ## Set per_page to 0 to disable pagination
@@ -98,7 +101,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: Butterfly
+theme: butterfly
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -108,6 +111,7 @@ deploy:
   branch: master
 
 
+  
 # bilibili番剧列表配置
 bangumi:
   enable: true 
@@ -159,9 +163,3 @@ steam:
   proxy:
     host:127.0.0.1
     port:1080
-
-
-# 关闭 asset_inject
-aplayer:
-  meting: true
-  asset_inject: false

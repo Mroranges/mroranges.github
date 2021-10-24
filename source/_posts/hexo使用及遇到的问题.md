@@ -1,7 +1,7 @@
 ---
-title: hexo使用及遇到的问题
+title: hexo-butterfly使用及遇到的问题
 date: 2021-10-01 16:01:08
-description: 只显示description
+description: 在安装部署使用过程中遇到的一些问题记录
 tags:
   - hexo
   - butterfly
@@ -33,7 +33,47 @@ abbrlink: 44095
 | aplayer          | 【可选】在需要的页面加载aplayer的js和css,请参考文章下面的音乐 配置 |
 | highlight_shrink | 【可选】配置代码框是否展开(true/false)(默认为设置中highlight_shrink的配置) --> |
 | toc              |               【可选】文章目录           |
+| sticky           | 【可选】数值越大，置顶的优先级越大 |
 
+
+## 文章置顶
+{% note info simple %}
+[hexo-generator-index](https://github.com/hexojs/hexo-generator-index)从 2.0.0 开始，已经支持文章置顶功能。你可以直接在文章的front-matter区域里添加sticky: 1属性来把这篇文章置顶。数值越大，置顶的优先级越大。
+{% endnote %}
+
+## 文章meta显示
+配置之文章页面会又不同的效果
+修改主题_config.xml
+```markdown
+post_meta:
+  page:
+    date_type: both # created or updated or both 主页文章日期是创建日或者更新日或都显示
+    date_format: relative # date/relative 显示日期还是相对日期
+    categories: true # true or false 主页是否显示分类
+    tags: true # true or false 主页是否显示标籤
+    label: true # true or false 显示描述性文字
+  post:
+    date_type: both # created or updated or both 文章页日期是创建日或者更新日或都显示
+    date_format: relative # date/relative 显示日期还是相对日期
+    categories: true # true or false 文章页是否显示分类
+    tags: true # true or false 文章页是否显示标籤
+    label: true # true or false 显示描述性文字
+```
+
+{% tabs '文章meta显示' %}
+<!-- tab 主页 -->
+{% image https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/hexo-theme-butterfly-docs-page-meta.png, alt=文章meta,主页 %}
+<!-- endtab -->
+<!-- tab 文章页 -->
+{% image https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/hexo-theme-butterfly-doc-post-info.png, alt=文章meta,文章页 %}
+<!-- endtab -->
+<!-- tab 相对时间 -->
+{% image https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/theme-butterfly-docs-relative-time.png, alt=文章meta,相对时间 %}
+<!-- endtab -->
+<!-- tab 明确时间 -->
+{% image https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/theme-butterfly-docs-full-date.png, alt=文章meta,明确时间 %}
+<!-- endtab -->
+{% endtabs %}
 
 ## hexo游游戏库页面插件（转至<a href= "https://butterfly.hclonely.com/posts/672d4d3b/">HCLonely</a>）
 ### 注意
@@ -354,6 +394,7 @@ index_generator:
 需要按照更新时间排序可以参考以下文章
 {% link hexo笔记：文章排序,https://gsy00517.github.io/hexo20200207151318/, /%}
 
+
 ## hexo使用过程中遇到的问题
 
 ### hexo 使用高版本后发现文章页，目录点击无反应
@@ -366,3 +407,7 @@ index_generator:
 err: Template render error: (unknown path)     unexpected end of file
 原因，hexo hexo不兼容{{}}标签问题 ,在文章里面有一个\{\% endtabs \%\}未写导致这个错误
 ```
+
+
+## 参考文章
+1. [Butterfly 安装文档(三) 主题配置-1](https://butterfly.js.org/posts/4aa8abbe/#%E8%AA%9E%E8%A8%80)

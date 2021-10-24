@@ -2,12 +2,13 @@
 title: butterfly标签
 abbrlink: 23825
 date: 2021-10-07 19:24:30
-description: 'butterfly内置标签及hexo-butterfly-tag-plugins-plus'
+description: 'hexo-butterfly-tag-plugins-plus安装及butterfly内置标签部分使用方法及说明'
 tags: 
     - butterfly
 categories:
     - 学习记录
-aside: false
+aside: true
+sticky: 1
 ---
 
 更多信息请查看官网介绍: [butterfly Tabs](https:\\butterfly.js.org\posts\4aa8abbe\#Tabs)
@@ -480,44 +481,363 @@ danger 提示块标签
 <!-- endtab -->
 {% endtabs %}
 
-
-
-## 按钮
-{% tabs '按钮' %}
+## 时间轴 timeline
+{% tabs '时间轴 timeline' %}
 <!-- tab 效果 -->
-{% btn 'https://butterfly.js.org/',Butterfly %}
-{% btn 'https://butterfly.js.org/',Butterfly,far fa-hand-point-right %}
-{% btn 'https://butterfly.js.org/',Butterfly,,outline %}
-{% btn 'https://butterfly.js.org/',Butterfly,far fa-hand-point-right,outline %}
-{% btn 'https://butterfly.js.org/',Butterfly,far fa-hand-point-right,larger %}
-<!-- endtab -->
-<!-- tab 代码 -->
-```
-{% btn 'https://butterfly.js.org/',Butterfly %}
-{% btn 'https://butterfly.js.org/',Butterfly,far fa-hand-point-right %}
-{% btn 'https://butterfly.js.org/',Butterfly,,outline \%}
-{% btn 'https://butterfly.js.org/',Butterfly,far fa-hand-point-right,outline %}
-{% btn 'https://butterfly.js.org/',Butterfly,far fa-hand-point-right,larger %}
-```
-<!-- endtab -->
-<!-- tab 语法 -->
-``` butterfly-tabs
-{% btn [url],[text],[icon],[color] [style] [layout] [position] [size] %}
+{% timeline %}
 
-[url]         : 链接
-[text]        : 按钮文字
-[icon]        : [可选] 图标
-[color]       : [可选] 按钮背景顔色(默认style时）
-                      按钮字体和边框顔色(outline时)
-                      default/blue/pink/red/purple/orange/green
-[style]       : [可选] 按钮样式 默认实心
-                      outline/留空
-[layout]      : [可选] 按钮佈局 默认为line
-                      block/留空
-[position]    : [可选] 按钮位置 前提是设置了layout为block 默认为左边
-                      center/right/留空
-[size]        : [可选] 按钮大小
-                      larger/留空
+{% timenode 2020-07-24 %}
+
+天气不错，适合出去约妹
+
+{% endtimenode %}
+
+{% timenode 2020-05-15 %}
+
+下雨了，适合在房间
+
+{% endtimenode %}
+
+{% timenode 2020-04-20 %}
+
+有空一起拉屎
+
+{% endtimenode %}
+
+{% endtimeline %}
+<!-- endtab -->
+<!-- tab 标签语法 -->
+```markdown
+{% timeline 时间线标题（可选） %}
+{% timenode 时间节点（标题） %}
+正文内容
+{% endtimenode %}
+{% timenode 时间节点（标题） %}
+正文内容
+{% endtimenode %}
+{% endtimeline %}
 ```
+<!-- endtab -->
+<!-- tab 源码 -->
+```markdownd
+{% timeline %}
+
+{% timenode 2020-07-24 %}
+
+天气不错，适合出去约妹
+
+{% endtimenode %}
+
+{% timenode 2020-05-15 %}
+
+下雨了，适合在房间
+
+{% endtimenode %}
+
+{% timenode 2020-04-20 %}
+
+有空一起拉屎
+
+{% endtimenode %}
+
+{% endtimeline %}
+```
+<!-- endtab -->
+{% endtabs %}
+
+## 按钮 btns
+{% tabs '按钮 btns' %}
+<!-- tab 效果 -->
+1. 一组含有头像的链接：
+{% btns circle grid5 %}
+{% cell GitHub, https://github.com/, https://cdn.jsdelivr.net/gh/cpddo/p_img@450ea647ca67bd386416a689f3eb1bc6a508b3b9/2021/01/23/f7ac7b26db76ada1704f6af09bedacbe.webp %}
+{% cell 哔哩哔哩, https://www.bilibili.com/, https://cdn.jsdelivr.net/gh/cpddo/p_img@e642ee265c8ae2bbd0994716aa12b3adbe07f2c4/2021/01/23/2ceca69a212d3b9988bbd2c41edc636c.webp %}
+{% cell Pixiv, https://www.pixiv.net/, https://cdn.jsdelivr.net/gh/cpddo/p_img@5c4fc20944c706aa452c31d1bddbdcc672e8c6ab/2021/01/23/7658d06315d32bcf0c954b3d8e8879e0.webp %}
+{% cell YouTube, https://www.youtube.com/, https://cdn.jsdelivr.net/gh/cpddo/p_img@ff4781678ea6227f5824e3c8bfd5cc27441db4da/2021/01/23/f4e292c780275465c9150eb3cb0785a4.webp %}
+{% cell 今日热榜, https://tophub.today/, https://cdn.jsdelivr.net/gh/cpddo/p_img@11fff6ed270722d709eb0ac88ce47f468c21d2ba/2021/01/23/cd22cd9d34d7d7bd58114d7d7a195822.webp %}
+{% endbtns %}
+2. 或者含有图标的按钮：
+{% btns rounded grid5 %}
+{% cell 下载源码, /, fas fa-download %}
+{% cell 查看文档, /, fas fa-book-open %}
+{% endbtns %}
+3. 圆形图标 + 标题 + 描述 + 图片 + 网格5列 + 居中
+{% btns circle center grid5 %}
+<a href='https://apps.apple.com/cn/app/heart-mate-pro-hrm-utility/id1463348922?ls=1'>
+  <i class='fab fa-apple'></i>
+  <b>心率管家</b>
+  {% p red, 专业版 %}
+  <img src='https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/qrcode/heartmate_pro.png'>
+</a>
+<a href='https://apps.apple.com/cn/app/heart-mate-lite-hrm-utility/id1475747930?ls=1'>
+  <i class='fab fa-apple'></i>
+  <b>心率管家</b>
+  {% p green, 免费版 %}
+  <img src='https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/qrcode/heartmate_lite.png'>
+</a>
+{% endbtns %}
+<!-- endtab -->
+<!-- tab 标签语法 -->
+```
+{% btns 样式参数 %}
+{% cell 标题, 链接, 图片或者图标 %}
+{% cell 标题, 链接, 图片或者图标 %}
+{% endbtns %}
+```
+<!-- endtab -->
+<!-- tab 参数配置 -->
+
+1. 圆角样式：rounded, circle
+2. 增加文字样式：可以在容器内增加 <b>标题</b> 和 <p>描述文字</p>
+3. 布局方式：默认为自动宽度，适合视野内只有一两个的情况。
+
+| 参数	| 含义 |
+| ----- | :-------: |
+| wide |	宽一点的按钮 |
+| fill |	填充布局，自动铺满至少一行，多了会换行 |
+| center |	居中，按钮之间是固定间距 |
+| around |	居中分散 |
+| grid2 |	等宽最多2列，屏幕变窄会适当减少列数 |
+| grid3 |	等宽最多3列，屏幕变窄会适当减少列数 |
+| grid4  |	等宽最多4列，屏幕变窄会适当减少列数 |
+| grid5 |	等宽最多5列，屏幕变窄会适当减少列数 |
+<!-- endtab -->
+<!-- tab 源码 -->
+1. 一组含有头像的链接：
+```markdown
+{% btns circle grid5 %}
+{% cell GitHub, https://github.com/, https://cdn.jsdelivr.net/gh/cpddo/p_img@450ea647ca67bd386416a689f3eb1bc6a508b3b9/2021/01/23/f7ac7b26db76ada1704f6af09bedacbe.webp %}
+{% cell 哔哩哔哩, https://www.bilibili.com/, https://cdn.jsdelivr.net/gh/cpddo/p_img@e642ee265c8ae2bbd0994716aa12b3adbe07f2c4/2021/01/23/2ceca69a212d3b9988bbd2c41edc636c.webp %}
+{% cell Pixiv, https://www.pixiv.net/, https://cdn.jsdelivr.net/gh/cpddo/p_img@5c4fc20944c706aa452c31d1bddbdcc672e8c6ab/2021/01/23/7658d06315d32bcf0c954b3d8e8879e0.webp %}
+{% cell YouTube, https://www.youtube.com/, https://cdn.jsdelivr.net/gh/cpddo/p_img@ff4781678ea6227f5824e3c8bfd5cc27441db4da/2021/01/23/f4e292c780275465c9150eb3cb0785a4.webp %}
+{% cell 今日热榜, https://tophub.today/, https://cdn.jsdelivr.net/gh/cpddo/p_img@11fff6ed270722d709eb0ac88ce47f468c21d2ba/2021/01/23/cd22cd9d34d7d7bd58114d7d7a195822.webp %}
+{% endbtns %}
+```
+2. 或者含有图标的按钮：
+```markdown
+{% btns rounded grid5 %}
+{% cell 下载源码, /, fas fa-download %}
+{% cell 查看文档, /, fas fa-book-open %}
+{% endbtns %}
+```
+3. 圆形图标 + 标题 + 描述 + 图片 + 网格5列 + 居中
+```markdown
+{% btns circle center grid5 %}
+<a href='https://apps.apple.com/cn/app/heart-mate-pro-hrm-utility/id1463348922?ls=1'>
+  <i class='fab fa-apple'></i>
+  <b>心率管家</b>
+  {% p red, 专业版 %}
+  <img src='https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/qrcode/heartmate_pro.png'>
+</a>
+<a href='https://apps.apple.com/cn/app/heart-mate-lite-hrm-utility/id1475747930?ls=1'>
+  <i class='fab fa-apple'></i>
+  <b>心率管家</b>
+  {% p green, 免费版 %}
+  <img src='https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/qrcode/heartmate_lite.png'>
+</a>
+{% endbtns %}
+```
+<!-- endtab -->
+
+{% endtabs %}
+
+## 行内图片 inlineimage
+{% tabs '行内图片 inlineimage' %}
+<!-- tab 效果 -->
+这是 {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/0000.gif %} 一段话。
+
+这又是 {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/5150.gif, height=40px %} 一段话。
+<!-- endtab -->
+<!-- tab 标签语法 -->
+```markdown
+{% inlineimage 图片链接, height=高度（可选） %}
+```
+<!-- endtab -->
+<!-- tab 参数 -->
+高度：height=20px
+<!-- endtab -->
+<!-- tab 源码 -->
+```markdownd
+这是 {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/0000.gif %} 一段话。
+
+这又是 {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/5150.gif, height=40px %} 一段话。
+```
+<!-- endtab -->
+{% endtabs %}
+
+## 单张图片 image
+{% tabs '单张图片 image' %}
+<!-- tab 效果 -->
+1. 添加描述
+{% image https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.jpg, alt=愿你成为自己的太阳，无需凭借谁的光芒。 %}
+2. 指定宽度：
+{% image https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.jpg, width=400px %}
+3. 指定宽度并添加描述：
+{% image https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.jpg, width=400px, alt=愿你成为自己的太阳，无需凭借谁的光芒。 %}
+4. 设置占位背景色：
+{% image https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.jpg, width=400px, bg=#1D0C04, alt=优化不同宽度浏览的观感 %}
+<!-- endtab -->
+<!-- tab 标签语法 -->
+```markdown
+{% image 链接, width=宽度（可选）, height=高度（可选）, alt=描述（可选）, bg=占位颜色（可选） %}
+```
+1. 图片宽度高度：width=300px, height=32px
+2. 图片描述：alt=图片描述（butterfly需要在主题配置文件中开启图片描述）
+3. 占位背景色：bg=#f2f2f2
+<!-- endtab -->
+<!-- tab 源码 -->
+1. 添加描述
+```markdown
+{% image https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.jpg, alt=愿你成为自己的太阳，无需凭借谁的光芒。 %}
+```
+2. 指定宽度：
+```markdown
+{% image https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.jpg, width=400px %}
+```
+3. 指定宽度并添加描述：
+```markdown
+{% image https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.jpg, width=400px, alt=愿你成为自己的太阳，无需凭借谁的光芒。 %}
+```
+4. 设置占位背景色：
+```makrdown
+{% image https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.jpg, width=400px, bg=#1D0C04, alt=优化不同宽度浏览的观感 %}
+```
+<!-- endtab -->
+{% endtabs %}
+
+## 音频 audio
+{% tabs '音频 audio' %}
+<!-- tab 效果 -->
+{% audio https://github.com/volantis-x/volantis-docs/releases/download/assets/Lumia1020.mp3 %}
+<!-- endtab -->
+<!-- tab 标签语法 -->
+```markdown
+{% audio 音频链接 %}
+```
+<!-- endtab -->
+<!-- tab 源码 -->
+```markdown
+{% audio https://github.com/volantis-x/volantis-docs/releases/download/assets/Lumia1020.mp3 %}
+```
+<!-- endtab -->
+{% endtabs %}
+
+## 视频 video
+{% tabs '视频 video' %}
+<!-- tab 效果 -->
+1. 100% 宽度
+{% video https://1251316161.vod2.myqcloud.com/007a649dvodcq1251316161/2d10a99a5285890815076699337/jDSbeLEbAvgA.mp4 %}
+2. 50% 宽度
+{% videos, 2 %}
+{% video https://1251316161.vod2.myqcloud.com/007a649dvodcq1251316161/c271d9f55285890808619247572/cvQ5JmaxQeIA.mp4 %}
+{% video https://1251316161.vod2.myqcloud.com/007a649dvodcq1251316161/8373c2325285890808618842182/0G2tZMSgFlIA.mp4 %}
+{% video https://bos.nj.bpc.baidu.com/tieba-smallvideo-transcode-crf/10517287_a019c0a4655b865403740b7b9d1f0622_0.mp4 %}
+{% video https://1251316161.vod2.myqcloud.com/007a649dvodcq1251316161/62034a6a5285890805262027097/2ZZqs2WH2HUA.mp4 %}
+{% endvideos %}
+3. 25% 宽度
+{% videos, 4 %}
+{% video https://1251316161.vod2.myqcloud.com/007a649dvodcq1251316161/dbb2338d5285890805087414392/iPOPAzDcziQA.mp4 %}
+{% video https://1251316161.vod2.myqcloud.com/007a649dvodcq1251316161/dbaff9015285890805087410150/hFeFC3ppTLsA.mp4 %}
+{% video https://1251316161.vod2.myqcloud.com/007a649dvodcq1251316161/b6ccab4b5285890805073207494/crb6Lmf26tQA.mp4 %}
+{% video https://sf1-ttcdn-tos.pstatp.com/obj/tos-cn-v-0004/aeacaeb49b1a4bf483d93356091fad60 %}
+{% video https://1251316161.vod2.myqcloud.com/007a649dvodcq1251316161/3c5d29755285890805529884127/jgf48juQ7PoA.mp4 %}
+{% video https://1251316161.vod2.myqcloud.com/007a649dvodcq1251316161/63f968535285890808730645862/Gg7ng1DpoJwA.mp4 %}
+{% video https://1251316161.vod2.myqcloud.com/007a649dvodcq1251316161/562fa8ea5285890808730073912/cAJgQKS0gL8A.mp4 %}
+{% video https://1251316161.vod2.myqcloud.com/007a649dvodcq1251316161/5d54d76e5285890808730396152/z0aYxeAto3QA.mp4 %}
+{% endvideos %}
+<!-- endtab -->
+<!-- tab 标签语法 -->
+```markdown
+{% video 视频链接 %}
+```
+<!-- endtab -->
+<!-- tab 参数配置 -->
+1. 对其方向：left, center, right
+2. 列数：逗号后面直接写列数，支持 1 ～ 4 列。
+<!-- endtab -->
+<!-- tab 源码 -->
+1. 100% 宽度
+```markdown
+{% video https://1251316161.vod2.myqcloud.com/007a649dvodcq1251316161/2d10a99a5285890815076699337/jDSbeLEbAvgA.mp4 %}
+```
+2. 50% 宽度
+```markdown
+{% videos, 2 %}
+{% video https://1251316161.vod2.myqcloud.com/007a649dvodcq1251316161/c271d9f55285890808619247572/cvQ5JmaxQeIA.mp4 %}
+{% video https://1251316161.vod2.myqcloud.com/007a649dvodcq1251316161/8373c2325285890808618842182/0G2tZMSgFlIA.mp4 %}
+{% video https://bos.nj.bpc.baidu.com/tieba-smallvideo-transcode-crf/10517287_a019c0a4655b865403740b7b9d1f0622_0.mp4 %}
+{% video https://1251316161.vod2.myqcloud.com/007a649dvodcq1251316161/62034a6a5285890805262027097/2ZZqs2WH2HUA.mp4 %}
+{% endvideos %}
+```
+3. 25% 宽度
+```markdown
+{% videos, 4 %}
+{% video https://1251316161.vod2.myqcloud.com/007a649dvodcq1251316161/dbb2338d5285890805087414392/iPOPAzDcziQA.mp4 %}
+{% video https://1251316161.vod2.myqcloud.com/007a649dvodcq1251316161/dbaff9015285890805087410150/hFeFC3ppTLsA.mp4 %}
+{% video https://1251316161.vod2.myqcloud.com/007a649dvodcq1251316161/b6ccab4b5285890805073207494/crb6Lmf26tQA.mp4 %}
+{% video https://sf1-ttcdn-tos.pstatp.com/obj/tos-cn-v-0004/aeacaeb49b1a4bf483d93356091fad60 %}
+{% video https://1251316161.vod2.myqcloud.com/007a649dvodcq1251316161/3c5d29755285890805529884127/jgf48juQ7PoA.mp4 %}
+{% video https://1251316161.vod2.myqcloud.com/007a649dvodcq1251316161/63f968535285890808730645862/Gg7ng1DpoJwA.mp4 %}
+{% video https://1251316161.vod2.myqcloud.com/007a649dvodcq1251316161/562fa8ea5285890808730073912/cAJgQKS0gL8A.mp4 %}
+{% video https://1251316161.vod2.myqcloud.com/007a649dvodcq1251316161/5d54d76e5285890808730396152/z0aYxeAto3QA.mp4 %}
+{% endvideos %}
+```
+<!-- endtab -->
+{% endtabs %}
+
+
+## 相册 gallery
+{% tabs '相册 gallery' %}
+<!-- tab 效果 -->
+1.gallerygroup 相册图库
+<div class="gallery-group-main">
+{% galleryGroup '壁纸' '收藏的一些壁纸' '/Gallery/wallpaper' https://i.loli.net/2019/11/10/T7Mu8Aod3egmC4Q.png %}
+{% galleryGroup '漫威' '关于漫威的图片' '/Gallery/marvel' https://i.loli.net/2019/12/25/8t97aVlp4hgyBGu.jpg %}
+{% galleryGroup 'OH MY GIRL' '关于OH MY GIRL的图片' '/Gallery/ohmygirl' https://i.loli.net/2019/12/25/hOqbQ3BIwa6KWpo.jpg %}
+</div>
+
+
+2.gallery 相册 
+{% gallery %}
+![](https://i.loli.net/2019/12/25/Fze9jchtnyJXMHN.jpg)
+![](https://i.loli.net/2019/12/25/ryLVePaqkYm4TEK.jpg)
+![](https://i.loli.net/2019/12/25/gEy5Zc1Ai6VuO4N.jpg)
+![](https://i.loli.net/2019/12/25/d6QHbytlSYO4FBG.jpg)
+![](https://i.loli.net/2019/12/25/6nepIJ1xTgufatZ.jpg)
+![](https://i.loli.net/2019/12/25/E7Jvr4eIPwUNmzq.jpg)
+![](https://i.loli.net/2019/12/25/mh19anwBSWIkGlH.jpg)
+![](https://i.loli.net/2019/12/25/2tu9JC8ewpBFagv.jpg)
+{% endgallery %}
+
+<!-- endtab -->
+<!-- tab 标签语法 -->
+1. gallerygroup 相册图库
+```markdown
+<div class="gallery-group-main">
+{% galleryGroup name description link img-url %}
+{% galleryGroup name description link img-url %}
+{% galleryGroup name description link img-url %}
+</div>
+```
+
+2. gallery 相册
+{% gallery %}
+markdown 圖片格式
+{% endgallery %}
+
+<!-- endtab -->
+<!-- tab 参数 -->
+- gallerygroup 相册图库
+| 参数名 	| 释义 | 
+|------|:-------:|
+| name | 	图库名字 | 
+| description | 	图库描述 | 
+| link | 	链接到对应相册的地址 | 
+| img-url | 	图库封面 | 
+
+
+- gallery 相册
+区别于旧版的Gallery相册,新的Gallery相册会自动根据图片长度进行排版，书写也更加方便，与markdown格式一样。可根据需要插入到相应的md。无需再自己配置长宽。建议在粘贴时故意使用长短、大小、横竖不一的图片，会有更好的效果。（尺寸完全相同的图片只会平铺输出，效果很糟糕）
+
 <!-- endtab -->
 {% endtabs %}

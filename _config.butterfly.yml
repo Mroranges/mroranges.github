@@ -45,14 +45,15 @@ copy:
   enable: true
   copyright:
     enable: true
-    limit_count: 50
+    limit_count: 300
 
 # social settings (社交圖標設置)
 # formal:
 #   icon: link || the description
 social:
-  # fab fa-github: https://github.com/xxxxx || Github
-  # fas fa-envelope: mailto:xxxxxx@gmail.com || Email
+  fab fa-github: https://github.com/xxxxx || Github
+  fas fa-envelope: mailto:907272473@qq.com || Email
+
 
 # search (搜索)
 # --------------------------------------
@@ -644,9 +645,10 @@ display_mode: light
 
 # Beautify (美化頁面顯示)
 beautify:
-  enable: false
-  field: site # site/post
-  title-prefix-icon: '\f0c1'
+  enable: true
+  field: post # site/post
+  # title-prefix-icon: '\f0c1' 原内容
+  title-prefix-icon: '\f863'
   title-prefix-icon-color: '#F47466'
 
 # Global font settings
@@ -903,7 +905,8 @@ css_prefix: true
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 inject:
   head:
-    <link rel="stylesheet" href="/mystatic/css/style.css">
+    <link rel="stylesheet" href="/mystatic/css/color@1.0.0.css">
+    <link rel="stylesheet" href="/mystatic/css/custom@1.0.0.css">
   bottom:
     <script src="/mystatic/js/my.js"></script>
 

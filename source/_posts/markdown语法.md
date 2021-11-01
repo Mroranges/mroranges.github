@@ -140,22 +140,26 @@ markdown语法:
 	[1]:http://www.google.com
 	[2]:http://www.baidu.com
 	```
-	
-* 注脚
 
-  语法：
+<!-- endtab -->
+
+<!-- tab 注脚 -->
+语法：
   
   ```markdown
     使用 Markdown[^1]可以效率的书写文档, 直接转换成 HTML[^2]。
     [^1]:Markdown是一种纯文本标记语言
     [^2]:HyperText Markup Language 超文本标记语言
   ```
-  
 
 <!-- endtab -->
 {% endtabs %}
 
 
+
+{% note info simple %}
+以下待补充
+{% endnote %}
 
 ## 无序列表、有序列表、定义型列表
 

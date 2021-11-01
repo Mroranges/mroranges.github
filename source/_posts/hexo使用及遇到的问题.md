@@ -391,8 +391,64 @@ index_generator:
   order_by: -date # -date 最新时间的文章在最上
 ```
 
+## 文章页局部 html 代码不渲染 
+md 文章页，部分内容不想经过 Hexo 渲染，则包一层 raw 标签：
+```markdown
+{% raw %}
+<div class="">你的一些代码...</div>
+<script>你的一些代码...</script>
+{% endraw %}
+```
+
+## 页面插入 B 站视频 / Bilibili
+{% tabs 页面插入 B 站视频 / Bilibili %}
+<!-- tab 效果预览 -->
+frame可以在B站分享处复制,可加参数&as_wide=1&high_quality=1&danmaku=0
+<div align=center class="aspect-ratio">
+    <iframe src="//player.bilibili.com/player.html?aid=86697667&bvid=BV1Q7411p73E&cid=148162280&page=1&as_wide=1&high_quality=1&danmaku=0" 
+    scrolling="no" 
+    border="0" 
+    frameborder="no" 
+    framespacing="0" 
+    allowfullscreen="true"> 
+    </iframe>
+    </iframe>
+</div>
+<!-- endtab -->
+<!-- tab 源码 -->
+直接复制插入你的 md 文章就行，修改里面的 aid 为你的视频 id
+```markdown
+<div align=center class="aspect-ratio">
+    <iframe src="//player.bilibili.com/player.html?aid=86697667&bvid=BV1Q7411p73E&cid=148162280&page=1&as_wide=1&high_quality=1&danmaku=0" 
+    scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> 
+    </iframe>
+</div>
+```
+哔哩哔哩视频适配,添加到自定义的css文件中
+```markdown
+/*哔哩哔哩视频适配*/
+.aspect-ratio {position: relative;width: 100%;height: 0;padding-bottom: 75%;margin: 3% auto;text-align: center;}      
+.aspect-ratio iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+```
+<!-- endtab -->
+{% endtabs %}
+
 需要按照更新时间排序可以参考以下文章
-{% link hexo笔记：文章排序,https://gsy00517.github.io/hexo20200207151318/, /%}
+{% link hexo笔记：文章排序,https://gsy00517.github.io/hexo20200207151318/, https://profile.csdnimg.cn/E/3/2/3_w211953332 %}
+
+## 开启photofigcaption图片显示两行重复描叙性文字
+在自定义css文件中加入以下代码(开始我一直想从源码的层面解决这个问题,搞了好久没弄出来,后来一想,隐藏不久行了吗,我真的是太蠢了)
+```markdown
+.image-caption{
+    display: none;
+}
+```
 
 
 ## hexo使用过程中遇到的问题
